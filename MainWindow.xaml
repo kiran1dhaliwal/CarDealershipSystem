@@ -1,0 +1,32 @@
+﻿<Window x:Class="CarDealershipSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarDealershipSystem"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1101.449" Width="1082.608">
+    <StackPanel Margin="0,0,0,-0.333">
+        <Menu HorizontalAlignment="Left" Height="78" Margin="10,10,0,0" VerticalAlignment="Top" Width="1027">
+            <MenuItem Header="Employee Management" FontSize="30">
+                <MenuItem Header="Add Employee"  Name="addEmployeeMenuItem" Click="AddEmployeeMenuItem_Click"/>
+                <MenuItem Header="Search Employee" Name="searchEmployeemenuItem" Click="SearchEmployeemenuItem_Click"/>
+                <MenuItem Header="Update Employee" Name="updateEmployeeMenuItem" Click="UpdateEmployeeMenuItem_Click"/>
+                <MenuItem Header="Show Employees" Name="showEmployeeMenuItem" Click="ShowEmployeeMenuItem_Click" />
+            </MenuItem>
+            <MenuItem Header="Car Sale Management" FontSize="30">
+                <MenuItem Header="Sell Car To new Customer" Name ="sellCarNewCustomerMenuItem" Click="SellCarNewCustomerMenuItem_Click"/>
+                <MenuItem Header="Sell Car to Existing Customer" Name="SellCarExistingCustomerMenuItem"/>
+            </MenuItem>
+            <MenuItem Header="Stock Management" FontSize="30">
+                <MenuItem Header="Add New Car with New Model" Name ="addNewCarWithNewModel" Click="AddNewCarWithNewModel_Click" />
+                <MenuItem Header="Add New Car with Existing Model" Name ="addNewCarWithExistingModel" Click="AddNewCarWithExistingModel_Click" />
+
+            </MenuItem>
+        </Menu>
+        <StackPanel Name="CenterPanel">
+
+        </StackPanel>
+
+    </StackPanel>
+</Window>

@@ -1,0 +1,30 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CarDealershipSystem"
+             xmlns:DB="clr-namespace:CarDealershipSystem.Models.DB" x:Class="CarDealershipSystem.ShowEmployeeUC"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="employeeViewSource" d:DesignSource="{d:DesignInstance {x:Type DB:Employee}, CreateList=True}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource employeeViewSource}">
+
+        <DataGrid x:Name="employeeDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="168,151,130,135" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="employeeIdColumn" Width="SizeToHeader" Header="Employee Id" Binding="{Binding EmployeeId}"/>
+                <DataGridTextColumn x:Name="officeAddressColumn" Width="SizeToHeader" Header="Office Address" Binding="{Binding OfficeAddress}"/>
+                <DataGridTextColumn x:Name="passwordColumn" Width="SizeToHeader" Header="Password" Binding="{Binding Password}"/>
+                <DataGridTextColumn x:Name="phoneExtensionColumn" Width="SizeToHeader" Header="Phone Extension" Binding="{Binding PhoneExtension}"/>
+                <DataGridTextColumn x:Name="roleColumn" Width="SizeToHeader" Header="Role" Binding="{Binding Role}"/>
+                <DataGridTextColumn x:Name="usernameColumn" Width="SizeToHeader" Header="Username" Binding="{Binding Username}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="SHOW" FontSize="25" Name="btnShow"
+                
+                HorizontalAlignment="Left" Margin="364,72,0,0" VerticalAlignment="Top" Width="75" Click="BtnShow_Click"/>
+
+    </Grid>
+</UserControl>
